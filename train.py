@@ -11,11 +11,11 @@ device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu:0')
 
 print(device)
 
-paths = ['/home/alfred_alpaca/Code/torch/cifar10/data/cifar-10-batches-py/data_batch_1',
-		 '/home/alfred_alpaca/Code/torch/cifar10/data/cifar-10-batches-py/data_batch_2',
-		 '/home/alfred_alpaca/Code/torch/cifar10/data/cifar-10-batches-py/data_batch_3',
-		 '/home/alfred_alpaca/Code/torch/cifar10/data/cifar-10-batches-py/data_batch_4',
-		 '/home/alfred_alpaca/Code/torch/cifar10/data/cifar-10-batches-py/data_batch_5']
+paths = ['./data/cifar-10-batches-py/data_batch_1',
+		 './data/cifar-10-batches-py/data_batch_2',
+		 './data/cifar-10-batches-py/data_batch_3',
+		 './data/cifar-10-batches-py/data_batch_4',
+		 './data/cifar-10-batches-py/data_batch_5']
 
 def main():
 	data = CIFAR10(paths)
@@ -38,7 +38,7 @@ def main():
 			if i%2000 == 0:
 				print(loss)
 			pass
-	torch.save(net.state_dict(), '/home/alfred_alpaca/Code/torch/cifar10/model/model1.pt')
+	torch.save(net.state_dict(), './model/model1.pt')
 
 
 if __name__ == '__main__':
